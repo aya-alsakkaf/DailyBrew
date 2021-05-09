@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background: white;
+}
+.navbar{
+    background: white;
+    font-size: 20px;
+}
+#nav-toggle-button{
+    color: black;
+}
+.nav-link,
+.navbar-brand {
+    color: black;
+    cursor:pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color:#9e7d46;
+}
+.navbar-brand:hover{
+    color: #9e7d46;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+header{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.63), rgba(0,0,0,0.5)), url(../img/history.jpg)no-repeat center center/cover;
+}
+
+.banner{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+.heading{
+    animation-name:slide;
+    animation-duration: 2s;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.main{
+    font-family: 'Times New Roman', Times, serif;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+    font-size: 25px;
+}
+
+.db-hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-color: black;
+  }
+
+.contact-social{
+    width: 100%;
+    border-radius: 25px;
+  }
+
+  .contact-social-icons{
+    cursor: pointer;
+  }
+  
+  .contact-social-icons:hover {
+    cursor: pointer;
+  }
+
+  .colorcover-link{
+    color:black;
+    transition: 0.5s;
+  }
+  .colorcover-link:hover{
+    color: #7D4A2C;
+  }
+
+  .container{
+      margin: 20px;
+      padding: 20px;
+  }
