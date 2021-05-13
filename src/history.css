@@ -30,6 +30,7 @@ body{
 }
 .navbar-collapse {
     justify-content: flex-end;
+    z-index: 2;
 }
 header{
     height: 100vh;
