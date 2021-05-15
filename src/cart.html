@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="cart.js"></script>
+    <title>Daily Brew | Cart</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="../img/dblogo4.png" width="30" height="30" class="d-line-block align-top" alt="Logo"> Daily Brew
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history.html">History</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Coffee
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Our beans</a>
+                        <a class="dropdown-item" href="#">Brewing methods</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../src/cart.html">Cart<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="sidenav">
+        <div class="cart-main-text">
+            <img src="../img/dblogo4.png" alt="Daily Brew Logo">
+            <h2>Daily Brew <br><br> Shopping Cart</h2>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+		    <div class="shopping-cart">
+		    	<div class="item">
+                    <div class="buttons">
+                        <button class="delete-btn" type="button" name="button">
+                            <img src="../img/delete.svg" title="delete">
+                        </button>
+                    </div>
+
+		    		<div class="image"><img src="../img/beansbg2.jpg" width="150" height="150" alt="item1 image"/></div>
+
+		    		<div class="description">
+		    			<span>Columbian Coffee</span>
+		    		</div>
+
+		    		<div class="quantity">
+		    			<button class="plus-btn" type="button" name="button">
+                            <img src="../img/plus.svg" title="plus">
+                        </button>
+                        <input type="text" name="item-name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="../img/minus.svg" title="minus">
+                        </button>
+		    		</div>
+
+                    <div class="subtotal-price">2.500KWD</div>
+		    	</div>
+
+                <br>
+
+                <div class="item">
+                    <div class="buttons">
+                        <button class="delete-btn" type="button" name="button">
+                            <img src="../img/delete.svg" title="delete">
+                        </button>
+                    </div>
+
+                    <div class="image"><img src="../img/beansbg2.jpg" width="150" height="150" alt="item2 image"/></div>
+
+                    <div class="description">
+                        <span>Coffee & Chill Mug</span>
+                    </div>
+
+                    <div class="quantity">
+                        <button class="plus-btn" type="button" name="button">
+                            <img src="../img/plus.svg" title="plus">
+                        </button>
+                        <input type="text" name="item-name" value="1">
+                        <button class="minus-btn" type="button" name="button">
+                            <img src="../img/minus.svg" title="minus">
+                        </button>
+                    </div>
+
+                    <div class="subtotal-price">2.500KWD</div>
+                </div>
+		    </div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

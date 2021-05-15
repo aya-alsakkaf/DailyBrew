@@ -4,38 +4,48 @@
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
+
 body{
     background: white;
 }
+
 .navbar{
     background: white;
     font-size: 20px; 
 }
+
 #nav-toggle-button{
     color: black;
 }
+
 .nav-link,
 .navbar-brand {
     color: #9e7d46;
     cursor:pointer;
 }
+
 .nav-link {
     margin-right: 1em !important;
 }
+
 .nav-link:hover {
     color:#9e7d46;
 }
+
 .navbar-brand:hover{
     color: #9e7d46;
 }
+
 .navbar-collapse {
     justify-content: flex-end;
     z-index: 2;
 }
+
 header{
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.63), rgba(0,0,0,0.5)), url(../img/beansbg2.jpg)no-repeat center center/cover;
 }
+
 @keyframes slide{
     0%{
         transform: translateX(1000px);
@@ -54,12 +64,14 @@ header{
     transform: translate(-50%, -50%);
     width: 80%;
 }
+
 .heading{
     animation-name:slide;
     animation-duration: 2s;
     font-family: 'Times New Roman', Times, serif;
 
 }
+
 .main{
     font-family: 'Times New Roman', Times, serif;
     animation-name: slide;
@@ -68,6 +80,7 @@ header{
     animation-fill-mode: backwards;
     font-size: 25px;
 }
+
 #history{
     
     margin-top: 12px;
@@ -78,6 +91,7 @@ header{
 .text{
     font-size: 20px;
 }
+
 .btn{
     color: black;
     font-weight: bold;
@@ -88,11 +102,13 @@ header{
 .history-images{
     position: relative;
 }
+
 .history-img{
     position: absolute;
     transition: all 2s ease;
     opacity: 0.9;
 }
+
 .history-img:hover{
     outline: 10px solid #7D4A2C;
     outline-offset: 32px;
@@ -100,6 +116,7 @@ header{
     z-index: 20;
     opacity: 1;
 }
+
 .hvr-right{
     display: inline-block;
     vertical-align: middle;
@@ -109,6 +126,7 @@ header{
     position: relative;
     transition-property: color;
 }
+
 .hvr-right::before{
     content: "";
     position: absolute;
@@ -124,13 +142,16 @@ header{
     transition-property: transform;
     transition-duration: 0.5s;
 }
+
 .hvr-right:hover, .hvr-right:focus, .hvr-right:active{
     color:white;
 }
+
 .hvr-right:hover::before, .hvr-right:focus:before, .hvr-right:active::before{
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transform: scaleX(1);
 }
+
 .db-hr {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -155,6 +176,7 @@ header{
 .rotate{
     perspective: 100rem;
 }
+
 .back{
     position: absolute;
     top: -100%;
@@ -174,9 +196,11 @@ header{
     left: 32%;
     transition: translate(-50%, -50%);
 }
+
 .rotate:hover .coffee-card{
     transform: rotateY(180deg);
 }
+
 .rotate:hover .back{
     opacity: 1;
     top: 0;
