@@ -27,12 +27,14 @@ li{
 .product-side .list li{
     margin-bottom: 18px;
     transition: 0.5s;
+    margin-left: 10px;
 }
 .product-side .list li a{
     font-size: 14px;
     font-weight: normal;
     color: #606060;
     position: relative;
+    text-decoration: none;
 
 }
 .side-shadow{
