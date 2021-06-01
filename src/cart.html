@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="sign-in.css">
     <link rel="stylesheet" type="text/css" href="cart.css">
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="cart.js"></script>
@@ -41,7 +42,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
+                    <a class="nav-link" href="products.html">Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../src/cart.html">Cart<span class="sr-only">(current)</span></a>
@@ -58,63 +59,54 @@
     
     <div class="main">
         <div class="col-md-6 col-sm-12">
-		    <div class="shopping-cart">
-		    	<div class="item">
-                    <div class="buttons">
-                        <button class="delete-btn" type="button" name="button">
-                            <img src="../img/delete.svg" title="delete">
-                        </button>
-                    </div>
-
-		    		<div class="image"><img src="../img/beansbg2.jpg" width="150" height="150" alt="item1 image"/></div>
-
-		    		<div class="description">
-		    			<span>Columbian Coffee</span>
-		    		</div>
-
-		    		<div class="quantity">
-		    			<button class="plus-btn" type="button" name="button">
-                            <img src="../img/plus.svg" title="plus">
-                        </button>
-                        <input type="text" name="item-name" value="1">
-                        <button class="minus-btn" type="button" name="button">
-                            <img src="../img/minus.svg" title="minus">
-                        </button>
-		    		</div>
-
-                    <div class="subtotal-price">2.500KWD</div>
-		    	</div>
-
-                <br>
-
-                <div class="item">
-                    <div class="buttons">
-                        <button class="delete-btn" type="button" name="button">
-                            <img src="../img/delete.svg" title="delete">
-                        </button>
-                    </div>
-
-                    <div class="image"><img src="../img/beansbg2.jpg" width="150" height="150" alt="item2 image"/></div>
-
-                    <div class="description">
-                        <span>Coffee & Chill Mug</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="plus-btn" type="button" name="button">
-                            <img src="../img/plus.svg" title="plus">
-                        </button>
-                        <input type="text" name="item-name" value="1">
-                        <button class="minus-btn" type="button" name="button">
-                            <img src="../img/minus.svg" title="minus">
-                        </button>
-                    </div>
-
-                    <div class="subtotal-price">2.500KWD</div>
+            <div class="wrap cf">
+                <div class="heading cf">
+                    <h1>My Cart</h1>
                 </div>
-		    </div>
-		</div>
-	</div>
+
+                <div class="cart">
+                    <ul class="cartWrap">
+                        <li class="items odd">
+                            <div class="infoWrap">
+                                <div class="cartSection">
+                                    <img src="../img/coffee-ethbeans.jpg" alt="" class="itemImg" />
+                                    <h3>Columbian Coffee</h3>
+                                    <p> <input type="text"  class="qty" placeholder="1"/> x 2.500 KWD</p>
+                                </div>  
+
+                                <div class="cartSection removeWrap">
+                                    <a href="#" class="remove">x</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="items even">
+                            <div class="infoWrap"> 
+                                <div class="cartSection">
+                                    <img src="../img/coffee-ethbeans.jpg" alt="" class="itemImg" />
+                                    <h3>Ethupian Coffee Beans</h3>
+                                    <p> <input type="text"  class="qty" placeholder="1"/> x 4.500 KWD</p>
+                                </div>
+
+                                <div class="cartSection removeWrap">
+                                    <a href="#" class="remove">x</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subtotal cf">
+                    <ul>
+                        <li class="totalRow"><span class="label">Subtotal</span><span class="value">7.000 KWD</span></li>
+                        <li class="totalRow"><span class="label">Shipping</span><span class="value">1.000 KWD</span></li>
+                        <li class="totalRow final"><span class="label">Total</span><span class="value">8.000 KWD</span></li>
+                        <li class="totalRow"><a href="checkout.html" class="btn continue">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -126,5 +118,4 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 </body>
-
 </html>

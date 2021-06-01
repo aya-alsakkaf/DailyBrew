@@ -1,4 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
+@import "compass/reset";
+$fontSans : 'Montserrat', sans-serif;
+$fontSerif : 'Droid Serif', serif;
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -28,7 +40,7 @@ body {
 }
 
 @media screen and (max-width: 450px) {
-  .shopping-cart {
+  .cart {
     margin-top: 10%;
   }
 
@@ -68,133 +80,290 @@ body {
     left: 0;
   }
 
-  .shopping-cart{
+  .cart{
     margin-top: 15%;
   }
 }
 
-.cart-main-text{
-  margin-top: 20%;
-  padding: 60px;
-  color: black;
+
+.wrap { box-sizing:border-box;}
+
+img {
+  max-width:100%;
 }
 
-.cart-main-text h2{
-  font-weight: 300;
+.cf:before,.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+.wrap {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5% 0;
+  margin-bottom: 5em;  
 }
 
-.shopping-cart {
-  display: flex;
-  flex-direction: column;
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid #D0D0D0;
+ }
+
+.heading h1 {
+  font-family: $fontSerif;
+  font-size: 2em;
+  float: left;
 }
 
-.item {
-  padding: 20px 30px;
-  height: 120px;
-  display: flex;
+a.continue &:link , &:visited {
+  text-decoration: none;
+  font-family: $fontSans;
+  letter-spacing: -.015em;
+  font-size: .75em;
+  padding: 1em;
+  color: #fff;
+  background: #82ca9c;
+  font-weight: bold;
+  border-radius: 50px;
+  float: right;
+  text-align: right;
 }
 
-.item:nth-child(5) {
-  border-top:  1px solid #E1E8EE;
-  border-bottom:  1px solid #E1E8EE;
-}
+a .continue &:link , &:visited @include transition(all, .25s, linear);
 
-.buttons {
+a .continue &:after {
+  content: "\276f";
+  padding: .5em;
   position: relative;
-  padding-top: 55px;
-  margin-right: 60px;
+  right:0;   
 }
 
-.delete-btn {
-  display: inline-block;
-  cursor: pointer;
-  width: 18px;
-  height: 17px;
-  background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+a .continue &:after @include transition(all, .15s, linear);
+
+a .continue &:hover , &:focus, &:active {
+  background: #f69679;
+}      
+
+a .continue &:hover, &:focus, &:active &:after {
+  right: -10px;
 }
 
-.image {
-  margin-right: 50px;
+.cart {
+  padding: 1em 0 ;
 }
 
-.description {
-  padding-top: 10px;
-  margin-right: 60px;
-  width: 115px;
-}
-
-.description span {
+.cart .items {
   display: block;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 400;
+  width: 100%;
+  vertical-align: middle;
+  padding: 1.5em;
+
+  border-bottom: 1px solid #fafafa;
 }
 
-/*.description span:first-child {
-  margin-bottom: 5px;
+.cart .items &.even {
+  background: #fafafa;
 }
 
-.description span:last-child {
-  font-weight: 300;
-  margin-top: 8px;
-  color: #86939E;
-}*/
+.cart .items .infoWrap {
+  display: table;
+  width: 100%;
+}
+
+.cart .items .cartSection {
+  display: table-cell;
+  vertical-align: middle;
+}      
+      
+.cart .items .cartSection {
+  font-size: .75em;
+  color: #777;
+  margin-bottom: .5em;
+}
+      
+.cart .items .cartSection h3 {
+  font-size: 1em;
+  font-family: $fontSans;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+}
+
+.cart .items .cartSection p {
+  display: inline-block;
+  font-size: .85em;
+  color: #777777;
+  font-family: $fontSans;
+}
 
 .quantity {
-  padding-top: 20px;
-  margin-right: 60px;
+  font-weight: bold;
+  color: #333;
 }
 
-.quantity input {
-  -webkit-appearance: none;
-  border: none;
+.itemImg {
+  width: 4em;
+  float: left;
+}
+
+&.qtyWrap, &.prodTotal {
   text-align: center;
-  width: 32px;
-  font-size: 16px;
-  font-weight: 300;
 }
 
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+&.qtyWrap, &.prodTotal p {
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
-.minus-btn img { 
-  margin-bottom: 3px;
-}
-
-.plus-btn img {
-  margin-top: 3px;
-}
-
-button:focus,
-input:focus {
-  outline:0;
-}
-
-.subtotal-price {
-  width: 83px;
-  padding-top: 27px;
+input.qty {
+  width: 2em;
   text-align: center;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
+  font-size: 1em;
+  padding: .25em;
+  margin: 1em .5em 0 0;
 }
 
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
+.itemImg {
+  width: 8em;
+  display: inline;
+  padding-right: 1em;
+}   
+
+a .remove {
+  text-decoration: none;
+  font-family: $fontSans;
+  color: #ffffff;
+  font-weight: bold;
+  background: #e0e0e0;
+  padding: .5em;
+  font-size: .75em;
+  display: inline-block;
+  border-radius: 100%;
+  line-height: .85;
 }
 
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
+a. remove @include transition(all, .25s, linear);
+
+a. remove &:hover {
+    background: #f30;
+}
+
+.btn &:link , &:visited {
+  text-decoration: none;
+  font-family: $fontSans;
+  letter-spacing: -.015em;
+  font-size: 1em;
+  padding: 1em 3em;
+  color: #fff;
+  background: #82ca9c;
+  font-weight: bold;
+  border-radius: 50px;
+  float: right;
+  text-align: right;
+}
+
+.btn &:link , &:visited @include transition(all, .25s, linear);
+
+.btn &:after {
+  content: "\276f";
+  padding: .5em;
+  position: relative;
+  right:0;
+}
+.btn &:after @include transition(all, .15s, linear);
+    
+.btn &:hover , &:focus, &:active {
+  background: #f69679;
+}
+
+.btn &:hover , &:focus, &:active &:after {
+  right: -10px;
+}
+
+/* TOTAL AND CHECKOUT  */
+.subtotal {
+float: right;
+ width: 40%;
+}
+
+.subtotal ul li {
+  list-style: none;
+}
+
+.subtotal .totalRow {
+  padding: .5em;
+  text-align: right;
+}
+
+.subtotal &.final {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.subtotal span {
+  display: inline-block;
+  padding: 0 0 0 1em;
+  text-align: right;
+}
+
+.subtotal .label {
+  font-family: $fontSans;
+  font-size: .85em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.subtotal .value {
+  letter-spacing: -.025em;
+  width: 30%;
+}
+
+@media only screen and (min-width: 900px){
+
+.wrap {
+  width: 98%;
+  padding: 2% 0;
+}
+
+.heading {
+  padding: 1em;
+  font-size: 90%;
+}
+
+.cart .item .cartSection {
+  width: 90%;
+  display: block;float: left;
+}
+
+.cart .item .cartSection &.qtyWrap {
+  width: 10%;
+  text-align: center;
+  padding: .5em 0;
+  float: right;
+}
+
+.cart .item .cartSection &.qtyWrap &:before {
+  content: "QTY";
+  display: block;
+  font-family: $fontSans;
+  padding: .25em;
+  font-size: .75em;
+}
+
+.cart .item .cartSection &.prodTotal , &.removeWrap { 
+  display: none;
+}
+
+.cart .item .cartSection .itemImg {
+  width: 35%;
+}
+
+.subtotal{
+  width: 100%;
+}
+
+a .btn .continue {
+  width: 100%;
+  text-align: center;
+  }
 }
