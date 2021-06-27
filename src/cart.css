@@ -110,7 +110,7 @@ img {
  }
 
 .heading h1 {
-  font-family: $fontSerif;
+  font-family: fontSerif;
   font-size: 2em;
   float: left;
 }
@@ -183,7 +183,7 @@ a .continue &:hover, &:focus, &:active &:after {
       
 .cart .items .cartSection h3 {
   font-size: 1em;
-  font-family: $fontSans;
+  font-family: fontSans;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: .025em;
@@ -193,7 +193,7 @@ a .continue &:hover, &:focus, &:active &:after {
   display: inline-block;
   font-size: .85em;
   color: #777777;
-  font-family: $fontSans;
+  font-family: fontSans;
 }
 
 .quantity {
@@ -231,7 +231,7 @@ input.qty {
 
 a .remove {
   text-decoration: none;
-  font-family: $fontSans;
+  font-family: fontSans;
   color: #ffffff;
   font-weight: bold;
   background: #e0e0e0;

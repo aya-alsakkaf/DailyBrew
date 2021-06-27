@@ -9,32 +9,36 @@ function formVal(){
     if(emailVal(email, uemail)){
      if(passVal(password, upass)){
            if(confirmPass(repass, urepass, password)){
-
+               return true;
            }
+        }
     }
-}
-    else
+    
     return false;
 }
 
 function emailVal(email, uemail){
    var reg= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-   if(reg.test(email) == false){
+   if(!reg.test(email)){
        uemail.innerHTML = "<p style=\"color:red; font-size=14px;\"> Invalid Email </p>";
        return false;
    }
-   else
-    return true;
+   else {
+        uemail.innerHTML = "";
+        return true;
+   }
 }
 
 function passVal(password, upass){
-    var reg=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{4,15}$/;
-    if(reg.test(password) == false){
-        upass.innerHTML = "<p style=\"color:red; font-size=14px;\"> Password should be between 8 to 15 with atleast one special, one upper, one lower and one numeric</p>";
+    var reg=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;
+    if(!reg.test(password)){
+        upass.innerHTML = "<p style=\"color:red; font-size=14px;\"> Password should be between 8 to 15 with at least one special, one upper, one lower and one numeric</p>";
         return false;
     }
-    else
-     return true;
+    else {
+        upass.innerHTML = "";
+        return true;
+    }
 }
 
 function confirmPass(repass, urepass, password){
@@ -42,6 +46,8 @@ function confirmPass(repass, urepass, password){
         urepass.innerHTML = "<p style=\"color:red; font-size=14px;\"> Passwords don't match </p>";
         return false;
     }
-    else
-    return true;
+    else {
+        urepass.innerHTML = "";
+        return true;
+    }
 }
