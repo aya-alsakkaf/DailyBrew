@@ -43,6 +43,16 @@ body{
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.63), rgba(0,0,0,0.5)), url(../img/video1.mp4)no-repeat center center/cover;
 }
+@keyframes slide{
+    0%{
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 .banner{
     position:absolute;

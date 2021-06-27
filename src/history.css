@@ -36,6 +36,16 @@ header{
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.63), rgba(0,0,0,0.5)), url(../img/history.jpg)no-repeat center center/cover;
 }
+@keyframes slide{
+    0%{
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 .banner{
     position:absolute;
@@ -45,7 +55,7 @@ header{
     width: 80%;
 }
 .heading{
-    animation-name:slide;
+    animation-name: slide;
     animation-duration: 2s;
     font-family: 'Times New Roman', Times, serif;
 
