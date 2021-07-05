@@ -1,4 +1,53 @@
-<!DOCTYPE html>
+<?php
+
+	// Place cleanup code here to prevent malicious code
+	if(isset($_POST['submit'])  && $_POST['submit']=="Submit")  // determine if submit button is clicked
+	{
+		$name = cleanData($_POST['name']);
+		$email = cleanData($_POST['email']);
+		$password = cleanData($_POST['password']);
+		$phone = cleanData($_POST['tel']);
+		addData($name, $email, $password, $phone);
+	}else{
+	    page();
+	}
+	function cleanData($data){
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = trim($data);
+		$data = htmlspecialchars($data);
+		$data = strip_tags($data);
+		return $data;
+	}
+
+	function addData($name, $email, $password, $phone){
+		include("dbinfo.php");
+		$checkId = mysqli_query($db, "SELECT * FROM Users WHERE username='$name' LIMIT 1");
+		$num_rows = mysqli_num_rows($checkId);
+
+		if ($num_rows > 0) {
+		    
+  			print "<h1 align = 'center'>The Username Already Exists</h1>";
+
+		}
+		else {
+
+			//Create sql statement of what to add to db
+		   $sql = "INSERT INTO `Users`(`username`, `email`, `password`, `phone`) ('$name', '$email', '$password', '$phone')";
+
+			$result = mysqli_query($db, $sql); // or die(mysql_error());
+
+print<<<HERE
+
+            <h1> Your account has been created <h1>
+            
+HERE;
+		}
+	}
+	
+	function page(){
+	    print<<<HERE
+            <!DOCTYPE html>
 <html lang="en">
   <head>
       <meta charset="utf-8">
@@ -71,7 +120,7 @@
     <div class="main">
       <div class="col-md-6 col-sm-12">
         <div class="register-form">
-            <form action="addByForm.php" method="post" name="signUpForm" onsubmit="return formVal()" >
+            <form method="post" name="signUpForm" onsubmit="return formVal()" >
                 <div class="form-group">
                   <label>User name</label>
                   <input name="name" id="name" type="text" class="form-control" placeholder="Username">
@@ -102,7 +151,7 @@
                 <div id="utel"></div>
                 </div>
                 
-                <input type="submit" value="Submit" class="btn hvr-right">
+                <input type="submit" name = "submit" value="Submit" class="btn hvr-right">
                 <button type="reset" class="btn hvr-right">Clean Up</button>
             </form>
         </div>
@@ -120,4 +169,20 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"></script>
   </body>
-</html>
+</html>	    
+HERE;
+	}
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
